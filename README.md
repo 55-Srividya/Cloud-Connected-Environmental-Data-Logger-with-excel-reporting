@@ -138,7 +138,6 @@ Finally, the sensor readings, along with the RTC timestamp, are uploaded to the 
 | 🌐 IoT-Based Monitoring Systems | Serve as a foundation for cloud-connected environmental monitoring solutions |
 
 ---
----
 
 ## 📂 Project Folder Structure
 
@@ -146,25 +145,16 @@ Finally, the sensor readings, along with the RTC timestamp, are uploaded to the 
 Cloud Connected Environmental Data Logger with Excel Reporting/
 │
 ├── README.md
-├── BLOCK_DIAGRAM.png
-├── WORKING_PRINCIPLE.png
+├── BLOCK_DIAGRAM_V2.png
+├── WORKING PRINCIPLE.png
 │
 ├── Excel File/
-│   └── Environmental Data Report
-│
 ├── HEX File/
-│   └── Project HEX File
-│
-├── Images/
-│   ├── Project Images
-│   ├── Hardware Setup
-│   ├── ThingSpeak Output
-│   └── Excel Output
-│
-└── Source_Code/
-    │
+├── images/
+└── Source Code/
     ├── .c source files
     └── .h header files
+```
 
 ---
 
@@ -178,7 +168,7 @@ During normal operation, the system continuously monitors the environmental cond
   <img src="./cloud%20connected%20environmental%20data%20logger%20with%20excel%20reporting/images/normal_monitoring.jpeg" alt="Normal Monitoring" width="700">
 </p>
 
-### 🌡️ High Temperature Monitoring
+### 🌡️ Temperature Monitoring
 
 When the measured temperature exceeds the configured temperature setpoint, the system detects the abnormal condition and provides an alert.
 
@@ -186,20 +176,12 @@ When the measured temperature exceeds the configured temperature setpoint, the s
   <img src="./cloud%20connected%20environmental%20data%20logger%20with%20excel%20reporting/images/high_temperature_monitoring.jpeg" alt="High Temperature Monitoring" width="700">
 </p>
 
-### 🚨 Temperature Alert
-
-When the monitored condition exceeds the configured threshold, the system activates the buzzer to provide an immediate alert to the user.
-
-<p align="center">
-  <img src="./cloud%20connected%20environmental%20data%20logger%20with%20excel%20reporting/images/temperature_alert.jpeg" alt="Temperature Alert" width="700">
-</p>
-
 ### ⚙️ Temperature Setpoint Configuration
 
-The user can configure the required temperature setpoint through the keypad. This allows the alert threshold to be adjusted according to the application requirement.
+The user can configure the required temperature setpoint through the keypad.
 
 <p align="center">
-  <img src="./cloud%20connected%20environmental%20data%20logger%20with%20excel%20reporting/images/temperature_setpoint.jpeg" alt="Temperature Setpoint Configuration" width="700">
+  <img src="./cloud%20connected%20environmental%20data%20logger%20with%20excel%20reporting/images/temperature_setpoint.jpeg" alt="Temperature Setpoint" width="700">
 </p>
 
 ### ⌨️ Keypad Interface
@@ -220,7 +202,7 @@ The sensor data is uploaded to the **ThingSpeak cloud** through the ESP-01 Wi-Fi
 
 ### 📊 Excel Data Logging
 
-The collected environmental data is stored in **Microsoft Excel** with timestamps, allowing historical data analysis and report generation.
+The collected environmental data is stored in **Microsoft Excel** with timestamps for historical analysis and reporting.
 
 <p align="center">
   <img src="./cloud%20connected%20environmental%20data%20logger%20with%20excel%20reporting/images/excel.png" alt="Excel Data Logging" width="900">
@@ -228,7 +210,7 @@ The collected environmental data is stored in **Microsoft Excel** with timestamp
 
 ### 🔌 Hardware Connections
 
-The system integrates the LPC2148 microcontroller with the LM35 temperature sensor, MQ2 gas sensor, RTC module, ESP-01 Wi-Fi module, LCD, keypad, and buzzer.
+The project integrates the LPC2148 microcontroller with the LM35 temperature sensor, MQ2 gas sensor, RTC module, ESP-01 Wi-Fi module, LCD, keypad, and buzzer.
 
 <p align="center">
   <img src="./cloud%20connected%20environmental%20data%20logger%20with%20excel%20reporting/images/hardware%20connections.png" alt="Hardware Connections" width="900">
@@ -241,3 +223,25 @@ The ESP-01 Wi-Fi module communicates with the LPC2148 through UART and provides 
 <p align="center">
   <img src="./cloud%20connected%20environmental%20data%20logger%20with%20excel%20reporting/images/esp01%20connection.jpeg" alt="ESP-01 Wi-Fi Interface" width="700">
 </p>
+
+---
+
+## 👩‍💻 Author
+
+**Srividya Kukkala**
+
+Electronics and Communication Engineering (ECE)
+
+### 🔧 Technical Skills
+
+- C / Embedded C
+- ARM7 / LPC2148
+- UART, SPI, I2C, ADC
+- RTC and External Interrupts
+- ESP-01 / Wi-Fi Communication
+- ThingSpeak IoT
+- Embedded Systems
+
+### 📌 Project Focus
+
+**Embedded Systems | IoT | Cloud Connectivity | Real-Time Data Logging**
