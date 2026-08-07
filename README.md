@@ -2,11 +2,11 @@
 
 ## 📌 Project Overview
 
-Environmental conditions such as temperature and gas concentration play a critical role in industries, warehouses, laboratories, hospitals, and smart agriculture. Manual monitoring of these parameters is time-consuming and may lead to delayed responses during abnormal conditions.
+Environmental conditions such as temperature and smoke concentration play a critical role in industries, warehouses, laboratories, hospitals, and smart agriculture. Manual monitoring of these parameters is time-consuming and may lead to delayed responses during abnormal conditions.
 
-This project presents a **Cloud-Connected Environmental Data Logger with Excel Reporting**, developed using the **LPC2148 ARM7 Microcontroller**. The system continuously monitors **temperature and smoke levels** using the **LM35** and **MQ2** sensors, displays the readings on a **16×2 LCD**, uploads the data to the **ThingSpeak cloud** through the **ESP-01 Wi-Fi module**, and automatically stores the collected data in **Microsoft Excel** for future analysis.
+This project presents a **Cloud-Connected Environmental Data Logger with Excel Reporting**, developed using the **LPC2148 ARM7 Microcontroller**. The system continuously monitors **temperature** using the **LM35 sensor** and **smoke concentration** using the **MQ2 gas sensor**. The measured values are displayed on a **16×2 LCD**, uploaded to the **ThingSpeak Cloud** through the **ESP-01 Wi-Fi module**, and automatically recorded in **Microsoft Excel** for future analysis.
 
-The project demonstrates the integration of **Embedded Systems**, **IoT**, **Cloud Connectivity**, and **Data Logging**, providing a reliable solution for real-time environmental monitoring.
+The system also utilizes **interrupts** to handle user inputs and periodic operations efficiently, ensuring faster response and better system performance. By integrating **Embedded Systems**, **IoT**, **Cloud Connectivity**, **Interrupt-driven Processing**, and **Data Logging**, this project provides a reliable real-time environmental monitoring solution.
 
 ---
 
@@ -14,14 +14,15 @@ The project demonstrates the integration of **Embedded Systems**, **IoT**, **Clo
 
 | Objective | Description |
 |------------|-------------|
-| 🌡️ Temperature Monitoring | Monitor environmental temperature in real time |
-| 🔥 Smoke Detection | Detect smoke using the MQ2 sensor |
-| ☁️ Cloud Connectivity | Upload sensor data to ThingSpeak using the ESP-01 Wi-Fi module |
-| 📊 Excel Data Logging | Store sensor data in Microsoft Excel for future analysis |
-| 🖥️ LCD Display | Display live sensor readings on a 16×2 LCD |
-| ⏰ Time Stamping | Record sensor data with date and time using the RTC module |
-| 🚨 Alert System | Activate the buzzer when the smoke level exceeds the threshold |
-| 🌐 Remote Monitoring | Enable users to monitor environmental conditions from anywhere through the cloud |
+| 🌡️ Temperature Monitoring | Continuously monitor environmental temperature using the LM35 sensor |
+| 🔥 Smoke Detection | Detect smoke concentration using the MQ2 gas sensor |
+| ☁️ Cloud Connectivity | Upload environmental data to the ThingSpeak cloud using the ESP-01 Wi-Fi module |
+| 📊 Excel Reporting | Store sensor readings with timestamps in Microsoft Excel |
+| 🖥️ LCD Display | Display real-time temperature and smoke values on a 16×2 LCD |
+| ⏰ Time Stamping | Record accurate date and time using the RTC module |
+| 🚨 Alert System | Activate the buzzer whenever the smoke level exceeds the threshold |
+| ⚡ Interrupt Handling | Use interrupts for quick response to user inputs and periodic operations |
+| 🌐 Remote Monitoring | Monitor environmental conditions remotely through the cloud |
 
 ---
 
@@ -29,16 +30,16 @@ The project demonstrates the integration of **Embedded Systems**, **IoT**, **Clo
 
 | Component | Quantity | Purpose |
 |-----------|:--------:|---------|
-| LPC2148 ARM7 Microcontroller | 1 | Main controller that reads sensor data, processes it, and controls the system |
-| LM35 Temperature Sensor | 1 | Measures ambient temperature |
-| MQ2 Gas Sensor | 1 | Detects smoke and harmful gases |
-| ESP-01 (ESP8266) Wi-Fi Module | 1 | Uploads sensor data to the ThingSpeak cloud |
-| DS1307 RTC Module | 1 | Provides real-time date and time for data logging |
-| 16×2 LCD Display | 1 | Displays real-time temperature and smoke readings. |
-| Matrix Keypad | 1 | Used to configure the temperature threshold |
-| Buzzer | 1 | Alerts the user when smoke exceeds the threshold |
-| Crystal Oscillator | 1 | Provides the clock signal for the LPC2148 microcontroller |
-| Regulated Power Supply | 1 | Supplies stable power to the complete system |
+| LPC2148 ARM7 Microcontroller | 1 | Central controller of the system |
+| LM35 Temperature Sensor | 1 | Measures environmental temperature |
+| MQ2 Gas Sensor | 1 | Detects smoke concentration |
+| ESP-01 (ESP8266) Wi-Fi Module | 1 | Uploads data to ThingSpeak cloud |
+| DS1307 RTC Module | 1 | Provides date and time for logging |
+| 16×2 LCD Display | 1 | Displays live sensor readings |
+| Matrix Keypad | 1 | Allows user to set the temperature threshold |
+| Buzzer | 1 | Generates an alert during abnormal conditions |
+| Crystal Oscillator | 1 | Provides system clock for LPC2148 |
+| Regulated Power Supply | 1 | Supplies stable power to the circuit |
 
 ---
 
@@ -46,10 +47,10 @@ The project demonstrates the integration of **Embedded Systems**, **IoT**, **Clo
 
 | Software | Purpose |
 |-----------|---------|
-| Keil µVision 4 | Embedded C code development and compilation |
-| Flash Magic | Upload the compiled program to the LPC2148 microcontroller |
-| Embedded C | Programming language used for firmware development |
-| ThingSpeak | Cloud platform for remote sensor data monitoring |
+| Keil µVision 4 | Embedded C code development and debugging |
+| Flash Magic | Upload firmware into LPC2148 |
+| Embedded C | Firmware development |
+| ThingSpeak | Cloud platform for IoT monitoring |
 | Microsoft Excel | Stores and analyzes logged sensor data |
 
 ---
@@ -57,18 +58,72 @@ The project demonstrates the integration of **Embedded Systems**, **IoT**, **Clo
 ## 🏗️ System Architecture
 
 <p align="center">
-  <img src="BLOCK DIAGRAM.png" alt="Cloud Connected Environmental Data Logger Block Diagram" width="1000">
+  <img src="./BLOCK%20DIAGRAM.png" alt="System Architecture" width="900">
 </p>
 
-The system is built around the **LPC2148 ARM7 Microcontroller**, which serves as the central controller. The **LM35 temperature sensor** and **MQ2 gas sensor** continuously monitor environmental conditions and send their readings to the microcontroller. The measured values are displayed on the **16×2 LCD** for local monitoring.
+The **LPC2148 ARM7 Microcontroller** acts as the central processing unit of the system. It acquires environmental data from the **LM35 temperature sensor** and **MQ2 gas sensor**, processes the readings, and displays them on a **16×2 LCD**.
 
-The **RTC module** provides accurate date and time information for timestamping each sensor reading. The **ESP-01 Wi-Fi module** transmits the collected data to the **ThingSpeak cloud platform**, allowing users to monitor environmental conditions remotely. The uploaded data is also recorded in **Microsoft Excel** for future analysis and reporting. Whenever the smoke level exceeds the predefined threshold, the system activates the **buzzer** to alert nearby users.
+The **DS1307 RTC module** provides accurate date and time information for timestamping every sensor reading. The **ESP-01 Wi-Fi module** communicates with the ThingSpeak cloud through UART and uploads the environmental data for remote monitoring. The uploaded information is also stored in **Microsoft Excel** for analysis and report generation.
 
----
+The system uses **interrupts** to improve responsiveness. User inputs from the keypad and other event-driven operations are handled through interrupt service routines (ISRs), allowing critical events to be processed immediately without affecting the continuous environmental monitoring process.
+
+Whenever the smoke level exceeds the predefined threshold, the LPC2148 activates the **buzzer** to alert nearby users.
 
 ---
 
 ## 🔄 Working Principle
 
-The Cloud-Connected Environmental Data Logger continuously monitors environmental conditions, displays real-time readings on the LCD, uploads the collected data to the ThingSpeak cloud, and stores the readings in Microsoft Excel for analysis.
+The Cloud-Connected Environmental Data Logger continuously monitors environmental conditions and uploads the collected data to the cloud for remote monitoring and Excel reporting. The system uses **interrupt-driven processing** to respond quickly to user actions while continuously acquiring sensor data.
 
+### Working Flow
+
+```text
+                     START
+                       │
+                       ▼
+              Initialize LPC2148
+                       │
+                       ▼
+Initialize LCD, RTC, UART, ADC, Sensors,
+ESP-01 Wi-Fi Module & Interrupts
+                       │
+                       ▼
+             Read Temperature (LM35)
+                       │
+                       ▼
+             Read Smoke Level (MQ2)
+                       │
+                       ▼
+          Display Values on LCD
+                       │
+                       ▼
+      Smoke Level > Threshold ?
+             │                  │
+          YES                  NO
+             │                  │
+             ▼                  │
+      Activate Buzzer           │
+             └──────────┬───────┘
+                        │
+                        ▼
+      Interrupt Occurs (Keypad/User Input)
+                        │
+                        ▼
+ Execute Interrupt Service Routine (ISR)
+                        │
+                        ▼
+     Update Temperature Threshold (if required)
+                        │
+                        ▼
+        Get Date & Time from RTC
+                        │
+                        ▼
+      Upload Data to ThingSpeak
+         through ESP-01 (UART)
+                        │
+                        ▼
+   Store Sensor Data in Microsoft Excel
+                        │
+                        ▼
+          Repeat Continuously
+```
