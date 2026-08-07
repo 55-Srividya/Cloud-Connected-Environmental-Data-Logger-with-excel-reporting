@@ -73,7 +73,17 @@ Whenever the smoke level exceeds the predefined threshold, the LPC2148 activates
 
 ## 🔄 Working Principle
 
-The Cloud-Connected Environmental Data Logger continuously monitors environmental conditions and uploads the collected data to the cloud for remote monitoring and Excel reporting. The system uses **interrupt-driven processing** to respond quickly to user actions while continuously acquiring sensor data.
+<p align="center">
+  <img src="./working_flow.png" alt="Working Flow Diagram" width="1000">
+</p>
+
+The system starts by initializing the LPC2148 microcontroller, LCD, RTC, ADC, UART, ESP-01 Wi-Fi module, sensors, and external interrupt. The LM35 temperature sensor and MQ2 gas sensor continuously monitor the environmental conditions.
+
+The measured values are displayed on the 16×2 LCD. If the smoke level exceeds the predefined threshold, the buzzer is activated to alert the user.
+
+When the **External Interrupt (EINT0)** is triggered through the matrix keypad, the system enters **Edit Mode**, allowing the user to modify the **Date, Time, Day, Month, Year, and Temperature Setpoint**. After saving the updated values, the program returns to normal monitoring.
+
+Finally, the sensor readings, along with the RTC timestamp, are uploaded to the ThingSpeak cloud through the ESP-01 Wi-Fi module and simultaneously stored in Microsoft Excel for future analysis. This process repeats continuously.
 
 
 ```
