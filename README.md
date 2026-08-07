@@ -136,3 +136,33 @@ Finally, the sensor readings, along with the RTC timestamp, are uploaded to the 
 | 🏠 Home Automation | Monitor indoor environmental conditions and receive cloud-based updates |
 | 🌍 Environmental Monitoring | Collect and analyze environmental data for research and reporting |
 | 🌐 IoT-Based Monitoring Systems | Serve as a foundation for cloud-connected environmental monitoring solutions |
+
+---
+---
+
+## 📂 Project Folder Structure
+
+```text
+Cloud-Connected-Environmental-Data-Logger-with-Excel-Reporting/
+│
+├── README.md
+├── BLOCK_DIAGRAM.png
+├── WORKING_PRINCIPLE.png
+│
+├── Excel File/
+│   └── Environmental Data Report
+│
+├── HEX File/
+│   └── Project HEX File
+│
+├── Images/
+│   ├── Project Images
+│   ├── Hardware Setup
+│   ├── ThingSpeak Output
+│   └── Excel Output
+│
+└── Source_Code/
+    │
+    ├── .c source files
+    └── .h header files
+```
