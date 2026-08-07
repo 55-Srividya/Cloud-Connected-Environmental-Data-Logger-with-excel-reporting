@@ -138,10 +138,9 @@ Finally, the sensor readings, along with the RTC timestamp, are uploaded to the 
 | 🌐 IoT-Based Monitoring Systems | Serve as a foundation for cloud-connected environmental monitoring solutions |
 
 ---
-
 ## 📂 Project Folder Structure
 
-text
+```text
 Cloud Connected Environmental Data Logger with Excel Reporting/
 │
 ├── README.md
@@ -154,7 +153,7 @@ Cloud Connected Environmental Data Logger with Excel Reporting/
 └── Source Code/
     ├── .c source files
     └── .h header files
-
+```
 ---
 
 ## 📸 Project Output
@@ -180,7 +179,7 @@ When the measured temperature exceeds the configured temperature setpoint, the s
 The user can configure the required temperature setpoint through the keypad.
 
 <p align="center">
-  <img src="./cloud%20connected%20environmental%20data%20logger%20with%20excel%20reporting/images/temperature_setpoint.jpeg" alt="Temperature Setpoint" width="700">
+  <img src="./cloud%20connected%20environmental%20data%20logger%20with%20excel%20reporting/images/temperature_setpoint.jpeg" alt="Temperature Setpoint Configuration" width="700">
 </p>
 
 ### ⌨️ Keypad Interface
