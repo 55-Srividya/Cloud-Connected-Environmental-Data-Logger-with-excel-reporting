@@ -58,7 +58,7 @@ The system also utilizes **interrupts** to handle user inputs and periodic opera
 ## 🏗️ System Architecture
 
 <p align="center">
-  <img src="./BLOCK%20DIAGRAM.png" alt="System Architecture" width="900">
+  <img src="./BLOCK_DIAGRAM_V2.png" alt="System Architecture" width="900">
 </p>
 
 The **LPC2148 ARM7 Microcontroller** acts as the central processing unit of the system. It acquires environmental data from the **LM35 temperature sensor** and **MQ2 gas sensor**, processes the readings, and displays them on a **16×2 LCD**.
