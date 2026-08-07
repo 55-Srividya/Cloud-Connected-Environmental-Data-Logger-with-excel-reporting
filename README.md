@@ -165,9 +165,6 @@ Cloud Connected Environmental Data Logger with Excel Reporting/
     │
     ├── .c source files
     └── .h header files
-```
-
----
 
 ---
 
@@ -175,68 +172,66 @@ Cloud Connected Environmental Data Logger with Excel Reporting/
 
 ### 🖥️ Normal Monitoring
 
-During normal operation, the system displays the environmental temperature and smoke level on the 16×2 LCD.
+During normal operation, the system continuously monitors the environmental conditions and displays the **temperature and smoke level** on the 16×2 LCD.
 
 <p align="center">
-  <img src="./images/normal_monitoring.jpeg" alt="Normal Monitoring" width="700">
+  <img src="./cloud%20connected%20environmental%20data%20logger%20with%20excel%20reporting/images/normal_monitoring.jpeg" alt="Normal Monitoring" width="700">
 </p>
 
 ### 🌡️ High Temperature Monitoring
 
-When the temperature increases beyond the configured temperature setpoint, the system detects the abnormal condition and provides an alert.
+When the measured temperature exceeds the configured temperature setpoint, the system detects the abnormal condition and provides an alert.
 
 <p align="center">
-  <img src="./images/high_temperature_monitoring.jpeg" alt="High Temperature Monitoring" width="700">
+  <img src="./cloud%20connected%20environmental%20data%20logger%20with%20excel%20reporting/images/high_temperature_monitoring.jpeg" alt="High Temperature Monitoring" width="700">
 </p>
 
 ### 🚨 Temperature Alert
 
-The system activates the buzzer when the monitored condition exceeds the configured threshold, providing an immediate alert to the user.
+When the monitored condition exceeds the configured threshold, the system activates the buzzer to provide an immediate alert to the user.
 
 <p align="center">
-  <img src="./images/temperature_alert.jpeg" alt="Temperature Alert" width="700">
+  <img src="./cloud%20connected%20environmental%20data%20logger%20with%20excel%20reporting/images/temperature_alert.jpeg" alt="Temperature Alert" width="700">
 </p>
 
 ### ⚙️ Temperature Setpoint Configuration
 
-The user can configure the required temperature setpoint through the keypad.
+The user can configure the required temperature setpoint through the keypad. This allows the alert threshold to be adjusted according to the application requirement.
 
 <p align="center">
-  <img src="./images/temperature_setpoint.jpeg" alt="Temperature Setpoint" width="700">
+  <img src="./cloud%20connected%20environmental%20data%20logger%20with%20excel%20reporting/images/temperature_setpoint.jpeg" alt="Temperature Setpoint Configuration" width="700">
 </p>
 
 ### ⌨️ Keypad Interface
 
-The keypad is used to enter the editing mode and configure the required parameters such as date, time, and temperature setpoint.
+The keypad is used to enter the editing mode and configure parameters such as **date, time, and temperature setpoint**.
 
 <p align="center">
-  <img src="./images/keypad_interface.jpeg" alt="Keypad Interface" width="700">
+  <img src="./cloud%20connected%20environmental%20data%20logger%20with%20excel%20reporting/images/keypad_interface.jpeg" alt="Keypad Interface" width="700">
 </p>
 
 ### ☁️ ThingSpeak Cloud Monitoring
 
-The sensor data is uploaded to the ThingSpeak cloud through the ESP-01 Wi-Fi module, enabling remote monitoring of environmental conditions.
+The sensor data is uploaded to the **ThingSpeak cloud** through the ESP-01 Wi-Fi module, enabling remote monitoring of environmental parameters.
 
 <p align="center">
-  <img src="./images/thingspeak%20image.png" alt="ThingSpeak Cloud Output" width="900">
+  <img src="./cloud%20connected%20environmental%20data%20logger%20with%20excel%20reporting/images/thinkspeak%20image.png" alt="ThingSpeak Cloud Monitoring" width="900">
 </p>
 
 ### 📊 Excel Data Logging
 
-The collected environmental data is stored in Microsoft Excel with timestamps for future analysis and reporting.
+The collected environmental data is stored in **Microsoft Excel** with timestamps, allowing historical data analysis and report generation.
 
 <p align="center">
-  <img src="./images/excel.png" alt="Excel Data Report" width="900">
+  <img src="./cloud%20connected%20environmental%20data%20logger%20with%20excel%20reporting/images/excel.png" alt="Excel Data Logging" width="900">
 </p>
 
----
+### 🔌 Hardware Connections
 
-## 🔌 Hardware Connections
-
-The project integrates the LPC2148 microcontroller with the LM35 temperature sensor, MQ2 gas sensor, RTC module, ESP-01 Wi-Fi module, LCD, keypad, and buzzer.
+The system integrates the LPC2148 microcontroller with the LM35 temperature sensor, MQ2 gas sensor, RTC module, ESP-01 Wi-Fi module, LCD, keypad, and buzzer.
 
 <p align="center">
-  <img src="./images/hardware%20connections.png" alt="Hardware Connections" width="900">
+  <img src="./cloud%20connected%20environmental%20data%20logger%20with%20excel%20reporting/images/hardware%20connections.png" alt="Hardware Connections" width="900">
 </p>
 
 ### 📡 ESP-01 Wi-Fi Interface
@@ -244,5 +239,5 @@ The project integrates the LPC2148 microcontroller with the LM35 temperature sen
 The ESP-01 Wi-Fi module communicates with the LPC2148 through UART and provides connectivity to the ThingSpeak cloud platform.
 
 <p align="center">
-  <img src="./images/esp01%20connection.jpeg" alt="ESP-01 Connection" width="700">
+  <img src="./cloud%20connected%20environmental%20data%20logger%20with%20excel%20reporting/images/esp01%20connection.jpeg" alt="ESP-01 Wi-Fi Interface" width="700">
 </p>
