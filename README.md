@@ -141,7 +141,7 @@ Finally, the sensor readings, along with the RTC timestamp, are uploaded to the 
 
 ## 📂 Project Folder Structure
 
-```text
+text
 Cloud Connected Environmental Data Logger with Excel Reporting/
 │
 ├── README.md
@@ -154,7 +154,6 @@ Cloud Connected Environmental Data Logger with Excel Reporting/
 └── Source Code/
     ├── .c source files
     └── .h header files
-```
 
 ---
 
