@@ -143,7 +143,7 @@ Finally, the sensor readings, along with the RTC timestamp, are uploaded to the 
 ## 📂 Project Folder Structure
 
 ```text
-Cloud-Connected-Environmental-Data-Logger-with-Excel-Reporting/
+Cloud Connected Environmental Data Logger with Excel Reporting/
 │
 ├── README.md
 ├── BLOCK_DIAGRAM.png
@@ -166,3 +166,31 @@ Cloud-Connected-Environmental-Data-Logger-with-Excel-Reporting/
     ├── .c source files
     └── .h header files
 ```
+
+---
+
+## 📸 Output
+
+### 🖥️ LCD Output
+
+The 16×2 LCD displays the real-time **temperature and smoke level** measured by the sensors.
+
+<p align="center">
+  <img src="./Images/lcd_output.png" alt="LCD Output" width="700">
+</p>
+
+### ☁️ ThingSpeak Cloud Output
+
+The sensor data is uploaded to the **ThingSpeak cloud** through the ESP-01 Wi-Fi module. The cloud dashboard allows remote monitoring of environmental parameters.
+
+<p align="center">
+  <img src="./Images/thingspeak_output.png" alt="ThingSpeak Cloud Output" width="900">
+</p>
+
+### 📊 Excel Report
+
+The collected sensor readings are recorded with **date and time** in Microsoft Excel for historical analysis and reporting.
+
+<p align="center">
+  <img src="./Images/excel_output.png" alt="Excel Report" width="900">
+</p>
