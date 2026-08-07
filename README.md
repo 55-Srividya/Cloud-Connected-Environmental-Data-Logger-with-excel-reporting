@@ -169,28 +169,80 @@ Cloud Connected Environmental Data Logger with Excel Reporting/
 
 ---
 
-## 📸 Output
+---
 
-### 🖥️ LCD Output
+## 📸 Project Output
 
-The 16×2 LCD displays the real-time **temperature and smoke level** measured by the sensors.
+### 🖥️ Normal Monitoring
+
+During normal operation, the system displays the environmental temperature and smoke level on the 16×2 LCD.
 
 <p align="center">
-  <img src="./Images/lcd_output.png" alt="LCD Output" width="700">
+  <img src="./images/normal_monitoring.jpeg" alt="Normal Monitoring" width="700">
 </p>
 
-### ☁️ ThingSpeak Cloud Output
+### 🌡️ High Temperature Monitoring
 
-The sensor data is uploaded to the **ThingSpeak cloud** through the ESP-01 Wi-Fi module. The cloud dashboard allows remote monitoring of environmental parameters.
+When the temperature increases beyond the configured temperature setpoint, the system detects the abnormal condition and provides an alert.
 
 <p align="center">
-  <img src="./Images/thingspeak_output.png" alt="ThingSpeak Cloud Output" width="900">
+  <img src="./images/high_temperature_monitoring.jpeg" alt="High Temperature Monitoring" width="700">
 </p>
 
-### 📊 Excel Report
+### 🚨 Temperature Alert
 
-The collected sensor readings are recorded with **date and time** in Microsoft Excel for historical analysis and reporting.
+The system activates the buzzer when the monitored condition exceeds the configured threshold, providing an immediate alert to the user.
 
 <p align="center">
-  <img src="./Images/excel_output.png" alt="Excel Report" width="900">
+  <img src="./images/temperature_alert.jpeg" alt="Temperature Alert" width="700">
+</p>
+
+### ⚙️ Temperature Setpoint Configuration
+
+The user can configure the required temperature setpoint through the keypad.
+
+<p align="center">
+  <img src="./images/temperature_setpoint.jpeg" alt="Temperature Setpoint" width="700">
+</p>
+
+### ⌨️ Keypad Interface
+
+The keypad is used to enter the editing mode and configure the required parameters such as date, time, and temperature setpoint.
+
+<p align="center">
+  <img src="./images/keypad_interface.jpeg" alt="Keypad Interface" width="700">
+</p>
+
+### ☁️ ThingSpeak Cloud Monitoring
+
+The sensor data is uploaded to the ThingSpeak cloud through the ESP-01 Wi-Fi module, enabling remote monitoring of environmental conditions.
+
+<p align="center">
+  <img src="./images/thingspeak%20image.png" alt="ThingSpeak Cloud Output" width="900">
+</p>
+
+### 📊 Excel Data Logging
+
+The collected environmental data is stored in Microsoft Excel with timestamps for future analysis and reporting.
+
+<p align="center">
+  <img src="./images/excel.png" alt="Excel Data Report" width="900">
+</p>
+
+---
+
+## 🔌 Hardware Connections
+
+The project integrates the LPC2148 microcontroller with the LM35 temperature sensor, MQ2 gas sensor, RTC module, ESP-01 Wi-Fi module, LCD, keypad, and buzzer.
+
+<p align="center">
+  <img src="./images/hardware%20connections.png" alt="Hardware Connections" width="900">
+</p>
+
+### 📡 ESP-01 Wi-Fi Interface
+
+The ESP-01 Wi-Fi module communicates with the LPC2148 through UART and provides connectivity to the ThingSpeak cloud platform.
+
+<p align="center">
+  <img src="./images/esp01%20connection.jpeg" alt="ESP-01 Connection" width="700">
 </p>
