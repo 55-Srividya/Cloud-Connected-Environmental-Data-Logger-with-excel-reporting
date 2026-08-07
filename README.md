@@ -75,55 +75,5 @@ Whenever the smoke level exceeds the predefined threshold, the LPC2148 activates
 
 The Cloud-Connected Environmental Data Logger continuously monitors environmental conditions and uploads the collected data to the cloud for remote monitoring and Excel reporting. The system uses **interrupt-driven processing** to respond quickly to user actions while continuously acquiring sensor data.
 
-### Working Flow
 
-```text
-                     START
-                       │
-                       ▼
-              Initialize LPC2148
-                       │
-                       ▼
-Initialize LCD, RTC, UART, ADC, Sensors,
-ESP-01 Wi-Fi Module & Interrupts
-                       │
-                       ▼
-             Read Temperature (LM35)
-                       │
-                       ▼
-             Read Smoke Level (MQ2)
-                       │
-                       ▼
-          Display Values on LCD
-                       │
-                       ▼
-      Smoke Level > Threshold ?
-             │                  │
-          YES                  NO
-             │                  │
-             ▼                  │
-      Activate Buzzer           │
-             └──────────┬───────┘
-                        │
-                        ▼
-      Interrupt Occurs (Keypad/User Input)
-                        │
-                        ▼
- Execute Interrupt Service Routine (ISR)
-                        │
-                        ▼
-     Update Temperature Threshold (if required)
-                        │
-                        ▼
-        Get Date & Time from RTC
-                        │
-                        ▼
-      Upload Data to ThingSpeak
-         through ESP-01 (UART)
-                        │
-                        ▼
-   Store Sensor Data in Microsoft Excel
-                        │
-                        ▼
-          Repeat Continuously
 ```
